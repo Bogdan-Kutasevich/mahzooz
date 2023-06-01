@@ -1,0 +1,21 @@
+<div class="transaction-completed">
+  <div class="transaction-completed__content">
+    <h3 class="transaction-completed__title" *ngIf="!isTicketPrinting">
+      Your transaction is complete. <br>
+      Please remember to take your ticket.
+    </h3>
+    <div class="transaction-completed__printing-ticket" *ngIf="isTicketPrinting">
+      <h3 class="transaction-completed__title" >
+        Please wait, <br>
+        Your ticket is printing.
+      </h3>
+      <div class="loader"></div>
+      <h3 class="transaction-completed__title" >
+        Thank you For<br>
+        Participating In Mahzooz.
+      </h3>
+    </div>
+  </div>
+</div>
+
+

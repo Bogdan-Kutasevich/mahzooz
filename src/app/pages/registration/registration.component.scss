@@ -1,0 +1,45 @@
+@import '../../../variables.scss';
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../assets/images/Mahzooz Kiosk screens 3 a.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px auto;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-weight: 800;
+    font-size: 48px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__form {
+    width: 50%;
+    height: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  &__navigate-block {
+    width: 100%;
+  }
+
+}
+
+

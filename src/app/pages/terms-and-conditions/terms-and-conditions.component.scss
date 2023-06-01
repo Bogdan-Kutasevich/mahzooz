@@ -1,0 +1,62 @@
+@import '../../../variables.scss';
+
+.terms-conditions {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-btn-action-background;
+  width: 100%;
+  height: 100vh;
+
+  &__content {
+    width: 80%;
+    margin: 20px auto;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 34px;
+    text-align: center;
+    color: white;
+  }
+
+  &__pdf-view {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 1000px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px 0;
+  }
+
+  &__pdf-viewer {
+    display: block;
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  &__action-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__action-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    transform: rotate(90deg);
+    background-color: $color-main-blue;
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+  }
+
+  &__navigate-block {
+    width: 100%;
+
+  }
+}

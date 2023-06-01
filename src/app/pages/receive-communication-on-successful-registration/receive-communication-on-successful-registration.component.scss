@@ -1,0 +1,99 @@
+@import '../../../variables.scss';
+
+.receive-communication {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    flex-grow: 1;
+    color: $color-btn-select;
+  }
+
+  &__head {
+    height: 70%;
+    background-color: $color-btn-action-background;
+    display: flex;
+    padding: 30px;
+  }
+
+  &__head-info {
+    width: 40%;
+  }
+
+  &__title {
+    font-style: italic;
+    font-size: 36px;
+    font-weight: 800;
+  }
+
+  &__sub-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+
+  &__span {
+    background-color: $color-btn-navigate-background;
+    color: $color-btn-navigate-text;
+  }
+
+  &__button {
+    padding: 10px 30px;
+    font-size: 24px;
+    background-color: $color-btn-navigate-background;
+    color: $color-btn-navigate-text;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 50px;
+  }
+
+  &__head-img {
+    border-radius: 50%;
+    margin-left: 200px;
+    height: 350px;
+    width: 350px;
+  }
+
+  &__footer {
+    height: 25%;
+    background-color: $color-background-footer;
+    padding: 10px;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__icons {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__icon {
+    fill: white;
+    height: 30px;
+    width: 30px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  &__text {
+    margin-top: 2px;
+  }
+}

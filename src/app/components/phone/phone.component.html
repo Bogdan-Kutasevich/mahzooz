@@ -1,0 +1,37 @@
+<div class="phone">
+  <div class="phone__head">
+    <button
+      class="phone__code"
+      (click)="router.routeToPage(routeToCountryCodePage)"
+    >
+      {{customerData.uiData.countryCode}}
+    </button>
+    <input class="phone__input" type="text" [value]="input">
+  </div>
+  <div class="phone__btns">
+    <div class="phone__numbers">
+      <button class="phone__number" (click)="addNumber('1')">1</button>
+      <button class="phone__number" (click)="addNumber('2')">2</button>
+      <button class="phone__number" (click)="addNumber('3')">3</button>
+      <button class="phone__number" (click)="addNumber('4')">4</button>
+      <button class="phone__number" (click)="addNumber('5')">5</button>
+      <button class="phone__number" (click)="addNumber('6')">6</button>
+      <button class="phone__number" (click)="addNumber('7')">7</button>
+      <button class="phone__number" (click)="addNumber('8')">8</button>
+      <button class="phone__number" (click)="addNumber('9')">9</button>
+      <button class="phone__number"></button>
+      <button class="phone__number" (click)="addNumber('0')">0</button>
+      <button class="phone__number"></button>
+    </div>
+    <div class="phone__action-btns">
+      <button
+        class="phone__action-btn"
+        [disabled]="!isPhoneNumberEntered"
+        (click)="navigateTo()"
+      >
+        Enter
+      </button>
+      <button class="phone__action-btn" (click)="clearNumber()">Back</button>
+    </div>
+  </div>
+</div>

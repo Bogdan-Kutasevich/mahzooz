@@ -1,0 +1,109 @@
+@import '../../../variables.scss';
+
+.otp-validator {
+  display: flex;
+  flex-direction: column;
+
+  &__reverse-counter {
+    top: 0;
+    left: -150px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    width: 520px;
+    height: 120px;
+    margin-bottom: 20px;
+
+  }
+
+  &__btns {
+    display: flex;
+    position: relative;
+  }
+
+  &__code {
+    position: absolute;
+    background-color: $color-btn-navigate-background;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 120px;
+    width: 120px;
+    box-shadow: 4px 4px 4px rgba(0,0,0, 0.5);
+    font-size: 36px;
+    font-weight: 800;
+  }
+
+  &__input {
+    background-color: $color-btn-action-background;
+    border: none;
+    height: 100px;
+    flex-grow: 1;
+    width: 100%;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 120px;
+    outline: none;
+    color: white;
+    font-size: 36px;
+    font-weight: 800;
+    padding: 5px;
+  }
+
+  &__input-code-confirm {
+    background-color: $color-btn-action-background;
+    border: none;
+    height: 100px;
+    flex-grow: 1;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-size: 36px;
+    font-weight: 800;
+    padding: 5px;
+  }
+
+  &__numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 400px;
+  }
+
+  &__number {
+    width: 120px;
+    height: 120px;
+    background-color: $color-btn-action-background;
+    border: none;
+    font-weight: 800;
+    color: $color-btn-select;
+    border-radius: 5px;
+    font-size: 36px;
+    cursor: pointer;
+  }
+
+  &__action-btns {
+    display: flex;
+    flex-direction: column;
+    height: 510px;
+    gap: 10px;
+
+  }
+
+  &__action-btn {
+    height: 260px;
+    width: 120px;
+    background-color: $color-btn-action-background;
+    border: none;
+    font-weight: 800;
+    font-size: 36px;
+    color: $color-btn-select;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,67 @@
+@import '../../../variables.scss';
+
+.view-customer-balance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url("../../../assets/images/Mahzooz Available Balance screens.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    color: $color-btn-action-background;
+    padding: 10px;
+    flex-grow: 1;
+  }
+
+  &__title {
+    margin-top: 5%;
+    font-size: 64px;
+    font-weight: 800;
+    &--2 {
+      margin-top: 30px;
+      font-size: 48px;
+    }
+  }
+
+  &__balance {
+    color: white;
+    font-weight: 800;
+    font-size: 48px;
+    border-radius: 10px;
+    background-color: $color-btn-action-background;
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  &__btn {
+    background-color: $color-btn-action-background;
+    color: $color-btn-select;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 50px;
+    font-size: 48px;
+    cursor: pointer;
+    font-weight: 800;
+  }
+
+  &__navigate-block {
+    width: 100%;
+  }
+}

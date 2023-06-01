@@ -1,0 +1,44 @@
+<div class="buy-water">
+  <img class="buy-water__bottle" src="../../../assets/images/BuyBottle.png" alt="">
+  <img class="buy-water__yellow-circle" src="../../../assets/images/yellow_circle.png" alt="">
+  <div class="buy-water__content">
+    <h1 class="buy-water__title">Le Blue <br> Water 500 ml</h1>
+    <p class="buy-water__text">
+      Every bottle you purchase will be
+      donate <br> and channelled through our partners
+      to <br> hydrate the those in need.
+    </p>
+    <p class="buy-water__text">
+      Every bottle you purchased <br>
+      will entitle you to submit one line into <br>
+      the weekly draw.
+    </p>
+    <div class="buy-water__buying-block">
+      <div class="buy-water__select-bottle-count">
+        <div class="buy-water__price">AED {{customerData.uiData.pricePerBottle}}/ - per <br> bottle</div>
+        <button class="buy-water__action-btn" (click)="removeBottle()">-</button>
+        <div class="buy-water__counter">{{currentBottleCount}}</div>
+        <button class="buy-water__action-btn" (click)="addBottle()">+</button>
+      </div>
+
+      <button
+        class="buy-water__add-to-cart"
+        (click)="addToCart()"
+      >
+        Add to Cart
+      </button>
+    </div>
+
+  </div>
+  <div class="buy-water__navigate-block">
+    <app-navigate-buttons></app-navigate-buttons>
+  </div>
+</div>
+
+<div *ngIf="!isModalHidden" class="modal-layout">
+  <div class="modal-window">
+    <p class="modal-window__text">{{currentModalText}}</p>
+    <button class="modal-window__button" (click)="toggleModal()">OK</button>
+  </div>
+</div>
+

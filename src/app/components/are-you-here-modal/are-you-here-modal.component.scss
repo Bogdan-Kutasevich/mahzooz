@@ -1,0 +1,75 @@
+@import '../../../variables.scss';
+
+.modal-layout {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 3;
+}
+
+.modal-window {
+  padding: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+
+  &__timeout {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    font-weight: 700;
+    background-color: $color-main-blue;
+  }
+
+
+  &__text {
+    margin-bottom: 10px;
+    color: $color-main-blue;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__reverse-counter {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px
+  }
+
+  &__button-no {
+    border: none;
+    background-color: #ef5367;
+    color: white;
+    font-weight: 700;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  &__button-yes {
+    border: none;
+    background-color: #1a83c8;
+    color: white;
+    font-weight: 700;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+  }
+}

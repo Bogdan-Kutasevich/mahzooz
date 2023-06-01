@@ -1,0 +1,66 @@
+@import '../../../variables.scss';
+
+.transaction-completed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/Mahzooz Kiosk Background Printing Ticket.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  &__content {
+    width: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    flex-grow: 1;
+  }
+
+  &__title {
+    color: $color-main-blue;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  &__printing-ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__navigate-block {
+    width: 100%;
+  }
+}
+
+.loader{
+  width: 200px;
+  height: 200px;
+  transition: .5s ease-in-out;
+  animation: loaderAnim 1.5s infinite;
+  background:
+    conic-gradient(
+        from 90deg,
+        transparent 12.5%, #57bfee 12.5%,
+        #2e3d85 37.5%, transparent 37.5%,
+        transparent 62.5%, #57bfee 62.5%,
+        #2e3d85 87.5%, transparent 87.5%
+    )
+    50% 50% / 32% 50%
+    no-repeat;
+}
+
+@keyframes loaderAnim{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}

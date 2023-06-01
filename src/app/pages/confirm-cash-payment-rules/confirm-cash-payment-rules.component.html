@@ -1,0 +1,17 @@
+<div class="confirm-cash-rules">
+  <div class="confirm-cash-rules__content">
+    <h1 class="confirm-cash-rules__title">Please confirm the following</h1>
+    <div class="confirm-cash-rules__rules">
+      <p class="confirm-cash-rules__text">Only insert one note at a time</p>
+      <p class="confirm-cash-rules__text">This machine does not give change</p>
+      <p class="confirm-cash-rules__text">If an incorrect note is inserted, only that note will be returned</p>
+      <p class="confirm-cash-rules__text">Any overpayment will show as Credit in your account</p>
+
+      <button class="confirm-cash-rules__btn" (click)="this.router.routeToPage(routeTo)">OK</button>
+    </div>
+  </div>
+  <div class="confirm-cash-rules__navigate-block">
+    <app-navigate-buttons></app-navigate-buttons>
+  </div>
+</div>
+

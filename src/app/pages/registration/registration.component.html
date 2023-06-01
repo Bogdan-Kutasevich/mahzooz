@@ -1,0 +1,16 @@
+<div class="registration">
+  <app-loader *ngIf="customerData.uiData.isDataFetching"></app-loader>
+  <div class="registration__content" *ngIf="!customerData.uiData.isDataFetching">
+    <h1 class="registration__title">Registration</h1>
+    <div class="registration__form">
+     <app-registration-form></app-registration-form>
+    </div>
+  </div>
+  <div class="registration__navigate-block" *ngIf="!customerData.uiData.isDataFetching">
+    <app-navigate-buttons></app-navigate-buttons>
+  </div>
+</div>
+
+<app-number-not-registered-modal *ngIf="!customerData.uiData.isNumberNotRegisteredModalHidden"></app-number-not-registered-modal>
+
+

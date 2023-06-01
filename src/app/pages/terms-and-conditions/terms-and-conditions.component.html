@@ -1,0 +1,33 @@
+<div class="terms-conditions">
+  <div class="terms-conditions__content">
+    <h1 class="terms-conditions__title">Terms and Conditions</h1>
+    <div class="terms-conditions__pdf-view">
+        <pdf-viewer [src]="pdfSrc"
+                    [render-text]="true"
+                    [original-size]="true"
+
+                    [show-all]="false"
+                    [(page)]="currentPage"
+                    class="terms-conditions__pdf-viewer"
+        >
+
+        </pdf-viewer>
+      <div class="terms-conditions__action-buttons">
+        <button
+          class="terms-conditions__action-button terms-conditions__action-button--1"
+          id="scroll-top-btn"
+          (click)="pageUp()"
+        ><</button>
+        <button
+          class="terms-conditions__action-button terms-conditions__action-button--2"
+          (click)="pageDown()"
+        >></button>
+      </div>
+
+    </div>
+  </div>
+  <div class="terms-conditions__navigate-block">
+    <app-navigate-buttons></app-navigate-buttons>
+  </div>
+</div>
+

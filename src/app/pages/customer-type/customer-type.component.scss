@@ -1,0 +1,57 @@
+@import '../../../variables.scss';
+
+.customer-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/CustomerType.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+
+  &__content {
+    width: 70%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 30px;
+    flex-grow: 1;
+    margin-top: 8%;
+    margin-right: 250px;
+  }
+
+  &__sub-title {
+    color: $color-main-blue;
+    width: 60%;
+    font-size: 56px;
+    text-align: center;
+  }
+
+  &__btns {
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  &__btn {
+    background-color: $color-btn-action-background;
+    color: $color-btn-select;
+    border: none;
+    border-radius: 5px;
+    padding: 40px 15px;
+    font-size: 32px;
+    font-weight: 800;
+    width: 400px;
+    height: 100%;
+  }
+
+  &__navigate-block {
+    width: 100%;
+  }
+}

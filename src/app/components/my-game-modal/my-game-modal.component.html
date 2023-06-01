@@ -1,0 +1,45 @@
+<div class="modal-layout">
+  <app-loader *ngIf="customerData.uiData.isDataFetching"></app-loader>
+  <div class="modal-window" *ngIf="!customerData.uiData.isDataFetching">
+    <h3 class="modal-window__title">My Games</h3>
+    <div class="modal-window__container">
+      <div
+        class="modal-window__no-games"
+        *ngIf="!customerData.submitEntriesData.tickets.length"
+      >
+        You don't have any active lines !!
+      </div>
+
+      <div class="modal-window__content" *ngIf="customerData.submitEntriesData.tickets.length">
+        <div class="modal-window__info">
+          <p class="modal-window__number-of-lines">No of lines: {{customerData.submitEntriesData.total_enries}}</p>
+<!--          <div>-->
+<!--            Draw date:-->
+<!--            <button class="modal-window__change-date" (click)="changeDate()">{{customerData.uiData.currentDrawDate}}</button>-->
+<!--          </div>-->
+        </div>
+
+        <div class="modal-window__detail-info-container">
+          <div class="modal-window__detail-info" *ngFor="let game of currentGames; let i = index">
+            <p class="modal-window__line-title">Line {{i + 1}}</p>
+
+            <div class="modal-window__line-numbers">
+                <span
+                  class="modal-window__line-number"
+                  *ngFor="let number of game.tips"
+                >
+                  {{number}}
+                </span>
+            </div>
+
+            <div class="modal-window__raffle-id">
+              Raffle ID: {{game.id}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="modal-window__button" (click)="closeModal()">OK</button>
+  </div>
+</div>
+

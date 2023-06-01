@@ -1,0 +1,21 @@
+<div class="insert-cash-amount">
+  <div class="insert-cash-amount__content">
+    <h3 class="insert-cash-amount__title">Please insert the correct amount <br> then select Pay</h3>
+    <div class="insert-cash-amount__amount">
+      <p class="insert-cash-amount__sub-title">The minimum amount of a recharge is AED 5</p>
+      <p class="insert-cash-amount__sub-title">The maximum amount of a recharge is AED 10,500</p>
+    </div>
+
+
+    <h3 class="insert-cash-amount__title insert-cash-amount__title--black">Please insert the one note  at a time</h3>
+    <p class="insert-cash-amount__sub-title insert-cash-amount__sub-title--black">The kiosk accepts the following denominations</p>
+    <p class="insert-cash-amount__sub-title insert-cash-amount__sub-title--black insert-cash-amount__sub-title--nominal">AED 5, 10, 20, 50,
+      <br> 100, 200, 500, 1000</p>
+
+    <h3 class="insert-cash-amount__title insert-cash-amount__title--black">Amount inserted</h3>
+    <div class="insert-cash-amount__insert-cash">{{cashInserted}}</div>
+    <button class="insert-cash-amount__pay-button" (click)="addCashToBalance()">Pay</button>
+<!--    <app-cancel-button></app-cancel-button>-->
+  </div>
+</div>
+

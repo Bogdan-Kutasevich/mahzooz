@@ -1,0 +1,12 @@
+@import '../../../variables.scss';
+
+.navigate-button {
+  background-color: $color-btn-navigate-background;
+  color: $color-btn-navigate-text;
+  border: none;
+  border-radius: 5px;
+  padding: 20px 40px;
+  font-size: 42px;
+  width: 250px;
+  font-weight: 800;
+}

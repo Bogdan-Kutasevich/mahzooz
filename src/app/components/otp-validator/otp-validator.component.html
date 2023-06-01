@@ -1,0 +1,39 @@
+<div class="otp-validator">
+  <div class="otp-validator__reverse-counter">
+    <app-reverse-counter
+      *ngIf="customerData.uiData.isNumberAlreadyExistModalHidden"
+      (click)="sendOtp()"
+    ></app-reverse-counter>
+  </div>
+    <div class="otp-validator__head">
+    <input class="otp-validator__input-code-confirm" type="text" [value]="input"
+    >
+  </div>
+  <div class="otp-validator__btns">
+    <div class="otp-validator__numbers">
+      <button class="otp-validator__number" (click)="addNumber('1')">1</button>
+      <button class="otp-validator__number" (click)="addNumber('2')">2</button>
+      <button class="otp-validator__number" (click)="addNumber('3')">3</button>
+      <button class="otp-validator__number" (click)="addNumber('4')">4</button>
+      <button class="otp-validator__number" (click)="addNumber('5')">5</button>
+      <button class="otp-validator__number" (click)="addNumber('6')">6</button>
+      <button class="otp-validator__number" (click)="addNumber('7')">7</button>
+      <button class="otp-validator__number" (click)="addNumber('8')">8</button>
+      <button class="otp-validator__number" (click)="addNumber('9')">9</button>
+      <button class="otp-validator__number"></button>
+      <button class="otp-validator__number" (click)="addNumber('0')">0</button>
+      <button class="otp-validator__number"></button>
+    </div>
+    <div class="otp-validator__action-btns">
+      <button
+        class="otp-validator__action-btn"
+        [disabled]="!isOtpNumberEntered"
+        (click)="verifyOtp()"
+      >
+        Enter
+      </button>
+      <button class="otp-validator__action-btn" (click)="clearNumber()">Back</button>
+    </div>
+  </div>
+</div>
+

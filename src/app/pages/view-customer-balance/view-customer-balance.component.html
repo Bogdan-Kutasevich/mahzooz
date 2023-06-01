@@ -1,0 +1,23 @@
+<div class="view-customer-balance">
+  <div class="view-customer-balance__content">
+    <h1 class="view-customer-balance__title">Hi _customer name_, <br> Available balance is</h1>
+    <p class="view-customer-balance__balance">AED {{customerData.existCustomerData.customerBalance}}</p>
+    <h1 class="view-customer-balance__title--2">What would you like to do?</h1>
+    <div class="view-customer-balance__btns">
+      <button class="view-customer-balance__btn" (click)="router.routeToPage(routeToPaymentCashRules)">
+        Add credit
+      </button>
+      <button
+        class="view-customer-balance__btn"
+        (click)="router.routeToPage(routeToBuyWater)"
+        *ngIf="customerData.existCustomerData.customerBalance"
+      >
+        Buy now
+      </button>
+    </div>
+
+  </div>
+  <div class="view-customer-balance__navigate-block">
+    <app-navigate-buttons></app-navigate-buttons>
+  </div>
+</div>

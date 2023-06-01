@@ -1,0 +1,56 @@
+@import '../../../variables.scss';
+
+.confirm-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/CustomerType.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  &__content {
+    width: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 30px;
+    flex-grow: 1;
+    margin-top: 10%;
+  }
+
+  &__sub-title {
+    color: $color-main-blue;
+    width: 60%;
+    font-size: 48px;
+    text-align: center;
+  }
+
+  &__number {
+    margin-top: 3%;
+    color: #e0543b;
+    font-size: 48px;
+    font-weight: 800;
+  }
+
+  &__confirm-btn {
+    margin-top: 5%;
+    height: 80px;
+    width: 320px;
+    color: white;
+    font-weight: 800;
+    font-size: 36px;
+    border: none;
+    border-radius: 10px;
+    background-color: $color-btn-action-background;
+    margin-bottom: 50px;
+    cursor: pointer;
+  }
+
+  &__navigate-block {
+    width: 100%;
+  }
+}

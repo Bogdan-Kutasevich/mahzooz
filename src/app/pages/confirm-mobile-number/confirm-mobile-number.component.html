@@ -1,0 +1,25 @@
+<div class="confirm-mobile">
+  <app-loader *ngIf="customerData.uiData.isDataFetching"></app-loader>
+  <div class="confirm-mobile__content" *ngIf="!customerData.uiData.isDataFetching">
+    <h3 class="confirm-mobile__sub-title">
+      Please confirm that your mobile number is correct
+    </h3>
+
+    <div class="confirm-mobile__number">
+      {{this.customerData.uiData.enteredPhoneNumber}}
+    </div>
+
+    <button
+      class="confirm-mobile__confirm-btn"
+      (click)="confirm()"
+    >
+      Confirm
+    </button>
+  </div>
+  <div class="confirm-mobile__navigate-block" *ngIf="!customerData.uiData.isDataFetching">
+    <app-navigate-buttons></app-navigate-buttons>
+  </div>
+</div>
+
+
+

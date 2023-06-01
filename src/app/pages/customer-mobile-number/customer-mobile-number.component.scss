@@ -1,0 +1,42 @@
+@import '../../../variables.scss';
+
+.customer-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/CustomerType.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+
+  &__content {
+    width: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 30px;
+    flex-grow: 1;
+    margin-top: 200px;
+  }
+
+  &__sub-title {
+    color: $color-main-blue;
+    width: 60%;
+    font-size: 56px;
+    text-align: center;
+  }
+
+  &__phone {
+    margin-top: 50px;
+  }
+
+  &__navigate-block {
+    width: 100%;
+  }
+}
+
+

@@ -1,0 +1,36 @@
+@import '../../../variables.scss';
+
+.are-you-here {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/OTP-invalid.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  &__content {
+    width: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    flex-grow: 1;
+    margin-top: 10%;
+  }
+
+  &__title {
+    color: $color-main-blue;
+    width: 60%;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  &__navigate-block {
+    width: 100%;
+  }
+}

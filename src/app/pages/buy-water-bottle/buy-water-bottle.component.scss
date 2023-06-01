@@ -1,0 +1,159 @@
+@import '../../../variables.scss';
+
+.buy-water {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: $color-background-white;
+  height: 100vh;
+
+  &__bottle {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    height: 100%;
+    width: 30%;
+  }
+
+  &__yellow-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40%;
+    width: 20%;
+  }
+
+  &__content {
+    width: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px 30px;
+    flex-grow: 1;
+    margin-top: 100px;
+    margin-left: 250px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    color: $color-main-blue;
+    width: 60%;
+    font-size: 24px;
+  }
+
+  &__text {
+    margin-top: 30px;
+    font-size: 12px;
+    font-weight: 300;
+    color: $color-btn-navigate-text;
+  }
+
+  &__buying-block {
+    display: flex;
+    height: 50px;
+    margin-top: 20px;
+  }
+
+  &__select-bottle-count {
+    display: flex;
+    border: 3px solid $color-main-blue;
+    border-right: none;
+    color: $color-main-blue;
+    font-size: 12px;
+    height: 100%;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-background-white;
+    padding: 10px;
+    border-right: 3px solid $color-main-blue;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  &__action-btn {
+    background-color: $color-background-white;
+    color: $color-main-blue;
+    border: none;
+    padding: 10px;
+    border-right: 3px solid $color-main-blue;
+    font-size: 32px;
+    width: 40px;
+  }
+
+  &__counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-background-white;
+    padding: 10px;
+    border-right: 1px solid ;
+    border-right: 3px solid $color-main-blue;
+    font-size: 24px;
+  }
+
+  &__add-to-cart {
+    margin-left: 20px;
+    background-color: $color-main-blue;
+    border: 3px solid $color-main-blue;
+    color: $color-btn-select;
+    font-weight: 800;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+
+  &__navigate-block {
+    width: 100%;
+  }
+}
+
+@import '../../../variables.scss';
+
+.modal-layout {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 3;
+}
+
+.modal-window {
+  padding: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+
+
+  &__text {
+    margin-bottom: 30px;
+    color: $color-main-blue;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__button {
+    border: none;
+    background-color: $color-btn-navigate-background;
+    color: $color-btn-navigate-text;
+    font-weight: 700;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+  }
+}
+

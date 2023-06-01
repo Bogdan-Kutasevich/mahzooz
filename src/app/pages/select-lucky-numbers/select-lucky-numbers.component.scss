@@ -1,0 +1,237 @@
+@import '../../../variables.scss';
+
+.select-lucky-numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-btn-action-background;
+  height: 100vh;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 10px 0;
+    flex-grow: 1;
+  }
+
+  &__title {
+    color: $color-btn-select;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__game-fields {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    height: 1000px;
+    gap: 10px;
+  }
+
+  &__field-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+  }
+
+  &__numbers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto;
+  }
+
+  &__number {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    color: $color-main-blue;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  &__action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    flex-grow: 1;
+  }
+
+  &__action__button {
+    height: 150px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 32px;
+    color: $color-main-blue;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  &__button-icon {
+    height: 100%;
+    width: 60px;
+  }
+
+  &__line-details {
+    background-color: $color-btn-select;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 70%;
+    padding: 15px;
+    border-radius: 5px;
+    flex-grow: 1;
+  }
+
+  &__your-numbers {
+    height: 50px;
+  }
+
+  &__detail-title {
+    color: $color-main-blue;
+    font-weight: 400;
+  }
+
+  &__detail-info-container {
+    height: 100%;
+  }
+
+  &__detail-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 5px;
+  }
+
+  &__line-numbers {
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
+  }
+
+  &__line-number {
+    color: $color-main-blue;
+    border: 1px solid $color-main-blue;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__line-edit {
+    background-color: $color-main-blue;
+    color: $color-btn-select;
+  }
+
+  &__line-buttons {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__line-delete {
+    background-color: #ef0000;
+  }
+
+  &__detail__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__purchase-info {
+    color: $color-main-blue;
+  }
+
+  &__checkout-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    gap: 5px;
+    flex-grow: 1;
+  }
+
+  &__date-container {
+    padding: 10px 15px;
+    background-color: $color-btn-select;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $color-main-blue;
+    flex-grow: 1;
+
+  }
+
+  &__date-input {
+    padding: 5px 15px;
+    border: 1px solid $color-main-blue;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  &__checkout-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border: none;
+    font-size: 16px;
+    color: $color-main-blue;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: $color-btn-select;
+    border-radius: 5px;
+
+  }
+
+  &__checkout-icon {
+    height: 50px;
+    width: 50px;
+  }
+
+  &__add-more {
+    color: $color-btn-select;
+    background-color: $color-btn-action-background;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-weight: 800;
+  }
+
+  &__navigate-block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__my-game-button {
+    background-color: $color-btn-navigate-background;
+    color: $color-btn-navigate-text;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 32px;
+    width: 210px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+}

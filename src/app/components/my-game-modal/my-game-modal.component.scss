@@ -1,0 +1,117 @@
+@import '../../../variables.scss';
+
+.modal-layout {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 3;
+}
+
+.modal-window {
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+
+  &__container {
+    padding: 40px;
+    border: 1px solid $color-btn-action-background;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
+  &__title {
+    color: $color-btn-action-background;
+  }
+
+  &__no-games {
+    padding: 100px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__number-of-lines {
+
+  }
+
+  &__change-date {
+    border: 1px solid $color-btn-action-background;
+    background-color: white;
+    width: 100px;
+  }
+
+  &__detail-info-container {
+    height: 100%;
+  }
+
+  &__detail-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 5px;
+  }
+
+  &__line-title {
+
+  }
+
+  &__line-numbers {
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
+  }
+
+  &__line-number {
+    color: $color-main-blue;
+    border: 1px solid $color-main-blue;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__raffle-id {
+
+  }
+
+
+  &__text {
+    margin-bottom: 30px;
+    color: $color-main-blue;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__button {
+    border: none;
+    background-color: $color-btn-navigate-background;
+    color: $color-btn-navigate-text;
+    font-weight: 700;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+  }
+}

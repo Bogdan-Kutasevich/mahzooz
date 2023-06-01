@@ -1,0 +1,64 @@
+@import '../../../variables.scss';
+
+.confirm-cash-rules {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../../../assets/images/Mahzooz Kiosk screens 3 a.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px auto;
+    flex-grow: 1;
+  }
+
+  &__title {
+    color: $color-btn-select;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 15px;
+  }
+
+  &__text {
+    color: $color-main-blue;
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  &__btn {
+    width: 200px;
+    height: 60px;
+    background-color: $color-btn-navigate-background;
+    color: $color-btn-navigate-text;
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 28px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  &__navigate-block {
+    width: 100%;
+  }
+}

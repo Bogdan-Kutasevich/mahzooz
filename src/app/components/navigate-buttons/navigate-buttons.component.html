@@ -1,0 +1,4 @@
+<div class="navigate-buttons">
+  <app-navigate-button *ngIf="router.prevPages.length > 1"></app-navigate-button>
+  <app-cancel-button *ngIf="!customerData.uiData.isTimeoutFinish"></app-cancel-button>
+</div>

@@ -1,0 +1,60 @@
+<div class="registration-form">
+  <form
+    class="registration-form__main"
+    novalidate
+    [formGroup]="myForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="registration-form__elements">
+      <div
+        class="registration-form__element"
+        *ngFor="let formField of formsFields"
+      >
+        <label class="registration-form__label" for="{{formField.title}}">
+          {{formField.title}}
+          <span class="registration-form__isRequired" *ngIf="formField.isRequired">*</span>
+        </label>
+        <input
+          class="registration-form__input"
+          type="text"
+          id="{{formField.title}}"
+          formControlName="{{formField.fieldNameForRequest}}"
+        >
+        <div class="registration-form__alert"
+             *ngIf="myForm.controls[formField.fieldNameForRequest].invalid && myForm.controls[formField.fieldNameForRequest].touched">
+          Incorrect input
+        </div>
+      </div>
+    </div>
+
+
+    <div class="registration-form__checkbox-block">
+      <div class="registration-form__checkbox-element">
+        <input class="registration-form__checkbox-check" type="checkbox" id="acceptTerms" formControlName="adult_checkbox">
+        <label for="acceptTerms">
+          I confirm I am over 18 and have read and accepted the
+          <a class="registration-form__link" (click)="this.router.routeToPage(routeToTermsAndConditions)">Terms Conditions</a>,
+          <a class="registration-form__link" (click)="this.router.routeToPage(routeToRules)">Rules</a>
+          and
+          <a class="registration-form__link" (click)="this.router.routeToPage(routeToPolicy)">Policy</a>
+        </label>
+      </div>
+      <div class="registration-form__checkbox-element">
+        <input class="registration-form__checkbox-check" type="checkbox" id="acceptAdd" formControlName="notify_newsletter">
+        <label for="acceptAdd">
+          I would like to receive offers, newsletters, promotions and other marketing
+          (including SMS messages, emails and in-app messages) from Mahzooz.
+        </label>
+      </div>
+    </div>
+
+    <button
+      class="registration-form__btn-submit"
+      [disabled]="myForm.invalid"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="customer-type">
+  <div class="customer-type__content">
+    <h3 class="customer-type__sub-title">Welcome To Mahzooz</h3>
+    <h3 class="customer-type__sub-title">Have You Participate Before</h3>
+    <div class="customer-type__btns">
+      <button
+        class="customer-type__btn"
+        (click)="changeCustomerType('exist')"
+      >
+        Existing Customer
+      </button>
+      <button
+        class="customer-type__btn"
+        (click)="changeCustomerType('new')"
+      >
+        New Customer
+      </button>
+    </div>
+  </div>
+  <div class="customer-type__navigate-block">
+    <app-navigate-buttons></app-navigate-buttons>
+  </div>
+</div>

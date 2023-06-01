@@ -1,0 +1,12 @@
+<div class="modal-layout">
+  <div class="modal-window">
+    <h3 class="modal-window__title">Select a Draw date</h3>
+    <button
+      class="modal-window__date"
+      *ngFor="let nextDraw of nextDraws"
+      (click)="changeDate(nextDraw.draw_date)">
+      {{nextDraw.draw_date}}
+    </button>
+    <button class="modal-window__button" (click)="closeModal()">OK</button>
+  </div>
+</div>

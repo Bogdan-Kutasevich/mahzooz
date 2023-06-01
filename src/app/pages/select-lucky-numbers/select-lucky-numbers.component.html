@@ -1,0 +1,140 @@
+<div class="select-lucky-numbers">
+  <app-loader *ngIf="customerData.uiData.isDataFetching"></app-loader>
+  <div class="select-lucky-numbers__content" *ngIf="!customerData.uiData.isDataFetching">
+    <h1 class="select-lucky-numbers__title">Choose your 5 numbers to participate</h1>
+    <div class="select-lucky-numbers__game-fields">
+      <div class="select-lucky-numbers__field-container">
+        <div class="select-lucky-numbers__numbers" >
+          <button
+            class="select-lucky-numbers__number"
+            *ngFor="let number of numbers"
+            (click)="addNumber(number)"
+          >
+            {{number}}
+          </button>
+        </div>
+
+        <div class="select-lucky-numbers__action-buttons">
+          <button
+            class="select-lucky-numbers__action__button"
+            [disabled]="!customerData.uiData.countOfBottles || !(customerData.chooseLines.length < 5)"
+            (click)="randomizeLine()"
+          >
+            <img
+              src="../../../assets/icons/Random-icon.svg"
+              alt="icon"
+              class="select-lucky-numbers__button-icon"
+            >
+            Randomize
+          </button>
+          <button
+            class="select-lucky-numbers__action__button"
+            [disabled]="!isCurrentLuckyNumbersExist"
+            (click)="clearCurrentNumbers()"
+          >
+            <img
+              src="../../../assets/icons/Clear-icon.svg"
+              alt="icon"
+              class="select-lucky-numbers__button-icon"
+            >
+            Clear
+          </button>
+          <button
+            class="select-lucky-numbers__action__button"
+            [disabled]="(
+            !isCurrentLuckyNumbersCompleted
+            || !customerData.uiData.countOfBottles
+            || !(customerData.chooseLines.length < 5)
+            )"
+            (click)="addLine()"
+          >
+            <img
+              src="../../../assets/icons/Submit-icon.svg"
+              alt="icon"
+              class="select-lucky-numbers__button-icon"
+            >
+            Submit
+          </button>
+        </div>
+      </div>
+
+      <div class="select-lucky-numbers__field-container">
+        <div class="select-lucky-numbers__line-details">
+          <div class="select-lucky-numbers__your-numbers">
+            <div class="select-lucky-numbers__line-numbers">
+              Your numbers:
+              <span
+                class="select-lucky-numbers__line-number"
+                *ngFor="let currentNumbers of currentLuckyNumbers">
+                {{currentNumbers}}
+              </span>
+            </div>
+          </div>
+          <h3 class="select-lucky-numbers__detail-title">
+            Line Details
+          </h3>
+
+          <div class="select-lucky-numbers__detail-info-container">
+            <div class="select-lucky-numbers__detail-info" *ngFor="let chooseLine of customerData.chooseLines; let i = index">
+              <p class="select-lucky-numbers__line-title">{{chooseLine.title}} {{i + 1}}</p>
+
+              <div class="select-lucky-numbers__line-numbers">
+                <span
+                  class="select-lucky-numbers__line-number"
+                  *ngFor="let number of chooseLine.numbers"
+                >
+                  {{number}}
+                </span>
+              </div>
+
+              <div class="select-lucky-numbers__line-buttons">
+                <button class="select-lucky-numbers__line-edit" (click)="editLine(chooseLine.numbers, i)">Edit</button>
+                <button class="select-lucky-numbers__line-delete" (click)="deleteLine(i)">x</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="select-lucky-numbers__detail__footer">
+            <div class="select-lucky-numbers__purchase-info">
+              <div class="select-lucky-numbers__purchase-cost">Purchase Cost: AED {{customerData.uiData.purchaseCost}}</div>
+              <div class="select-lucky-numbers__line-left">Line left: {{customerData.uiData.linesLeft}}</div>
+            </div>
+            <button class="select-lucky-numbers__add-more" (click)="addMore()">+ Add more</button>
+          </div>
+        </div>
+
+        <div class="select-lucky-numbers__checkout-container">
+          <div class="select-lucky-numbers__date-container">
+            <p class="select-lucky-numbers__date-title">Select a Draw date</p>
+            <button
+              class="select-lucky-numbers__date-input"
+              (click)="customerData.changeData({isChangeDrawDateModalHidden: false}, 'uiData')"
+            >
+              {{customerData.uiData.currentDrawDate}}
+            </button>
+          </div>
+
+          <button
+            class="select-lucky-numbers__checkout-button"
+            (click)="checkout()"
+          >
+            <img src="../../../assets/icons/Cart-icon.svg" alt="cart" class="select-lucky-numbers__checkout-icon">
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="select-lucky-numbers__navigate-block" *ngIf="!customerData.uiData.isDataFetching && !customerData.uiData.isFetchingError">
+    <app-navigate-button></app-navigate-button>
+    <button
+      class="select-lucky-numbers__my-game-button"
+      (click)="customerData.changeData({isMyGameModalHidden: false}, 'uiData')"
+    >
+      My Games
+    </button>
+    <app-cancel-button></app-cancel-button>
+  </div>
+</div>
+

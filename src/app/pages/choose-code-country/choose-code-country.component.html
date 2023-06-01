@@ -1,0 +1,31 @@
+<div class="choose-code">
+  <div class="choose-code__content">
+    <div class="choose-code__list">
+      <div class="choose-code__list-items">
+        <button
+          class="choose-code__button"
+          *ngFor="let country of customerData.listOfCountries"
+          (click)="chooseCode(country.countryCode)"
+        >
+          {{country.countryName}}
+        </button>
+      </div>
+
+      <div class="choose-code__action-btns">
+        <div class="choose-code__action-up choose-code__round-btn" (click)="pageUp()">
+          <span class="material-symbols-outlined">
+            expand_less
+          </span>
+        </div>
+        <div class="choose-code__action-down choose-code__round-btn" (click)="pageDown()">
+          <span class="material-symbols-outlined">
+            expand_more
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="choose-code__navigate-block">
+    <app-navigate-buttons></app-navigate-buttons>
+  </div>
+</div>
