@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CustomerDataService} from "./data.service";
-import {forkJoin, zip} from 'rxjs';
 
 const kioskId = 'kiosk12345';
 const kioskLoc = 'Dubai';
@@ -162,12 +161,12 @@ export class HttpService {
     const body = {
       type: 'cacheTopUp',
       data: {
-        customer_id: this.customerData.existCustomerData.customerId,
-        phone_number: this.customerData.uiData.enteredPhoneNumber,
+        customerId: this.customerData.existCustomerData.customerId,
+        mobileNumber: this.customerData.uiData.enteredPhoneNumber,
         transactionAmount,
         transactionCurrency: 'AED',
-        kioskTransactionId: 'PAYNETKIOSK23453555412347',
-        merchantId: this.customerData.existCustomerData.merchantId,
+        kioskTransactionId: 'PAYNETKIOSK' + Date.now(),
+        merchantId: this.customerData.authData.merchantId,
         transactionDate: now,
         payment: {
           'type': 'CASH'
@@ -176,40 +175,41 @@ export class HttpService {
       }
     }
 
-    console.log(body)
+    console.log('body topUp request:', body)
 
     return this.http.post<any>(this.baseUrl, body)
   }
 
   submitEntries(selectedLines: Line[]) {
-    const requests = [];
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed)
       .toISOString()
       .replace('T', ' ')
-      .slice(-4);
+      .slice(0, 19);
 
-    const requests$ = selectedLines.map(currentLine => {
-      const body = {
-        type: 'submitEntries',
-        data: {
-          transaction_id:'PAYNETKIOSK2354244654675637',
-          transaction_date: today,
-          customer_id: this.customerData.existCustomerData.customerId,
-          phone_number: this.customerData.uiData.enteredPhoneNumber,
-          tips: currentLine,
-          product_id:'102',
-          first_draw_id:'101',
-          jwtToken: this.customerData.authData.jwtToken,
-        }
+    // const first_draw_id = this.customerData.systemData.next_draws['102'][0].draw_id
+    const currentDrawInfoFromGetSystem = this.customerData.systemData.next_draws['102'].find((draw: any) => {
+      return draw.draw_date === this.customerData.uiData.currentDrawDate
+    }) || null;
+
+    const first_draw_id = currentDrawInfoFromGetSystem.draw_id
+
+
+    const preparedLines = [this.customerData.chooseLines[0].numbers.join(',')]
+    const body = {
+      type: 'submitEntries',
+      data: {
+        transaction_id:'PAYNETKIOSK' + Date.now(),
+        transaction_date: today,
+        customer_id: this.customerData.existCustomerData.customerId,
+        phone_number: this.customerData.uiData.enteredPhoneNumber,
+        tips: preparedLines,
+        product_id:'102',
+        first_draw_id,
+        jwtToken: this.customerData.authData.jwtToken,
       }
-      return this.http.post<any>(this.baseUrl, body)
-    })
-    //Code below is another way to send many request
-    // forkJoin([
-    //   ...requests$
-    // ])
-
-    return zip(...requests$)
+    }
+    console.log('submitEntriesBody',body)
+    return this.http.post<any>(this.baseUrl, body)
   }
 }

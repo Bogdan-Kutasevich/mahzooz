@@ -48,9 +48,11 @@ export class SelectLuckyNumbersComponent implements OnInit{
             this.customerData.changeData(data, 'submitEntriesData')
             //there need to add data about game into data service your games
             console.log('submitData:', data)
+            this.customerData.changeData({isDataFetching: false}, 'uiData');
           },
           error: (error) => {
             this.customerData.changeData({
+              isDataFetching: false,
               isFetchingError: true,
             }, 'uiData')
             console.log(error)
@@ -58,7 +60,7 @@ export class SelectLuckyNumbersComponent implements OnInit{
           }
         })
 
-        this.customerData.changeData({isDataFetching: false}, 'uiData');
+
         console.log('system data:', system.data)
       },
       error: (error) => {
@@ -99,11 +101,14 @@ export class SelectLuckyNumbersComponent implements OnInit{
   }
 
   addLine() {
-    if(this.customerData.chooseLines.length >= 5) {
+    console.log('add Line')
+    console.log(this.customerData.chooseLines)
+    if(this.customerData.chooseLines.length <= 5) {
       const newLine = {
         title: 'Line',
         numbers: this.currentLuckyNumbers,
       };
+      console.log('add Line into if')
 
       this.customerData.chooseLines = [...this.customerData.chooseLines, newLine];
       this.currentLuckyNumbers = [];
@@ -147,12 +152,12 @@ export class SelectLuckyNumbersComponent implements OnInit{
 
   checkout() {
     if (this.customerData.existCustomerData.customerBalance >= this.customerData.uiData.purchaseCost) {
-      //make transaction api for all lines
       this.customerData.changeData({isDataFetching: true}, 'uiData')
       this.http.submitEntries(this.customerData.chooseLines).subscribe({
         next: (data) => {
           this.customerData.changeData(data, 'submitEntriesData')
-          this.customerData.changeData({isDataFetching: true}, 'uiData')
+          this.customerData.changeData({isDataFetching: false}, 'uiData')
+          this.router.routeToPage(this.routeToTransactionComplete)
           console.log(data)
         },
         error: (error) => {
@@ -165,7 +170,6 @@ export class SelectLuckyNumbersComponent implements OnInit{
         }
       })
       this.customerData.chooseLines = [];
-      this.router.routeToPage(this.routeToTransactionComplete)
     }
   }
 }

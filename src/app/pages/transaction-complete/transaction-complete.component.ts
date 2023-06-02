@@ -7,7 +7,7 @@ import {CustomerDataService} from "../../services/data.service";
   styleUrls: ['./transaction-complete.component.scss']
 })
 export class TransactionCompleteComponent implements OnInit{
-  public isTicketPrinting = false
+  public isTicketPrinting = false;
 
   constructor(
     public router: RouterService,
@@ -28,8 +28,8 @@ export class TransactionCompleteComponent implements OnInit{
       }, 'uiData');
       clearTimeout(this.customerData.uiData.timeoutId)
       this.router.prevPages = [];
-      this.router.routeToPage('choose-language');
-    }, 3000)
+      this.customerData.exitSession();
+    }, 5000)
   }
 
   printTicket() {

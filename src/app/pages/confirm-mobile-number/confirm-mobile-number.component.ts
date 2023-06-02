@@ -23,6 +23,9 @@ export class ConfirmMobileNumberComponent {
       next: (data) => {
         if (data.statusCode === 200) {
           this.customerData.changeData(data, 'existCustomerData')
+          this.customerData.changeData({
+            customerBalance: this.customerData.existCustomerData.customerBalance/100
+          }, 'existCustomerData')
           switch (this.customerData.uiData.customerType) {
             case 'new':
               this.customerData.uiData.changeData({

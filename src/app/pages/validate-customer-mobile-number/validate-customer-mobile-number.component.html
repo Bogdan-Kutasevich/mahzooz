@@ -14,7 +14,7 @@
       <app-otp-validator></app-otp-validator>
     </div>
   </div>
-  <div class="validate-mobile__navigate-block" *ngIf="customerData.uiData.isDataFetching">
+  <div class="validate-mobile__navigate-block" *ngIf="!customerData.uiData.isDataFetching">
     <app-navigate-buttons></app-navigate-buttons>
   </div>
 </div>

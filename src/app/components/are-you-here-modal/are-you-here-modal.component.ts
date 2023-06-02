@@ -18,12 +18,10 @@ export class AreYouHereModalComponent {
   }
 
   ngOnInit() {
-
     this.interval = setInterval(() => {
       if(this.seconds === 0) {
         window.clearInterval(this.interval)
-        this.router.prevPages = [];
-        this.router.routeToPage(this.routeTo);
+        this.customerData.exitSession()
         this.customerData.changeData({isAreYouHereModalHidden: true}, 'uiData')
         return;
       }
@@ -42,7 +40,6 @@ export class AreYouHereModalComponent {
   no() {
     clearInterval(this.interval)
     this.customerData.changeData({isAreYouHereModalHidden: true}, 'uiData')
-    this.router.prevPages = [];
-    this.router.routeToPage(this.routeTo)
+    this.customerData.exitSession()
   }
 }

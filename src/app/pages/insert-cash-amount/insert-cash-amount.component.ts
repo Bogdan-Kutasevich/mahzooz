@@ -10,7 +10,7 @@ import {webSocket, WebSocketSubject} from "rxjs/webSocket";
 })
 export class InsertCashAmountComponent implements OnInit{
   public routeTo = 'successful-payment';
-  public cashInserted: any = 10;
+  public cashInserted: any = 50;
   private url: string = 'ws://localhost:8083';
   private socket$: WebSocketSubject<any>;
 
@@ -41,43 +41,14 @@ export class InsertCashAmountComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.auth()
     this.onInsertCash()
     this.connectBillAcceptorMessage()
-  }
-
-  auth() {
-    this.http.authenticateSelf().subscribe({
-      next: (data) => {
-        console.log(data)
-        this.customerData.changeData(data, 'authData')
-        this.exist()
-      },
-      error: (error) => {
-        console.log(error)
-      }
-    })
-  }
-
-  exist() {
-    this.http.verifyCustomerExistence().subscribe({
-      next: (data) => {
-        if (data.statusCode === 200) {
-          this.customerData.changeData(data, 'existCustomerData')
-        }
-        console.log(data)
-      },
-      error: (error) => {
-        console.log(error)
-      }
-    })
   }
 
   onInsertCash() {
     this.socket$.subscribe(
       {
         next: msg => {
-          console.log('message receive:', msg)
           if (msg.event === 'STACKED') {
             this.cashInserted += msg.data.amount
           } else {
@@ -101,11 +72,12 @@ export class InsertCashAmountComponent implements OnInit{
   }
 
   addCashToBalance() {
-    console.log('start payment')
     this.stopAccepting()
+    console.log('start payment')
     this.customerData.changeData({isDataFetching: true}, 'uiData');
     this.http.cacheTopUp(this.cashInserted).subscribe({
       next: (data) => {
+        console.log('topUpData:', data)
         this.customerData.changeData(data, 'topUpData');
         this.customerData.changeData({customerBalance: data.customerBalance}, 'existCustomerData');
         this.customerData.changeData({isDataFetching: false}, 'uiData');

@@ -15,5 +15,5 @@
     </div>
 
   </div>
-  <app-cancel-button></app-cancel-button>
+  <app-cancel-button *ngIf="!customerData.uiData.isDataFetching"></app-cancel-button>
 </div>
